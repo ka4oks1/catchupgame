@@ -12,6 +12,7 @@ type Position struct {
 
 func PositionCorrect(position Position) bool {
 
+	return false
 }
 
 type MapGen struct {
