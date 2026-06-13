@@ -4,5 +4,5 @@ import "fmt"
 
 func main() {
 
-	fmt.Println("adsf")
+	fmt.Println("There is a CatchUp game")
 }
