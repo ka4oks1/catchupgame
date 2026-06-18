@@ -1,7 +1,7 @@
 package personell
 
 import (
-	"catchupgame/maps"
+	_ "catchupgame/maps"
 	_ "github.com/stretchr/testify"
 	"github.com/stretchr/testify/assert"
 	_ "github.com/stretchr/testify/assert"
