@@ -3,7 +3,6 @@ package personell
 import (
 	"catchupgame/controls"
 	"catchupgame/maps"
-	"errors"
 )
 
 func init() {
@@ -25,7 +24,7 @@ func (e *Enemy) FindShortWay() {
 
 }
 
-func (p *Person) Move(way string) error {
+func (p *Person) Move(way string, mapa maps.Map) bool {
 
 	wayCode, wayExists := controls.GetWays(way)
 	var expectedPos maps.Position
@@ -42,11 +41,12 @@ func (p *Person) Move(way string) error {
 
 	}
 
-	if maps.PositionCorrect(expectedPos) { //destination availible on map and way exists
+	if mapa.PositionCorrect(expectedPos) { //destination available on map and way exists
 
-		return nil
+		return wayExists
 	}
-	wrongTurn := errors.New("invalid turn")
-	return wrongTurn
+
+	wayExists = false
+	return wayExists
 
 }

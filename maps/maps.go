@@ -10,11 +10,6 @@ type Position struct {
 	YCoord uint8
 }
 
-func PositionCorrect(position Position) bool {
-
-	return false
-}
-
 type MapGen struct {
 	seed int
 }
@@ -25,6 +20,13 @@ type Map struct {
 	Type      string //square rect
 }
 
+// false here is good like 0 is empty place where character may stand and go to
+func (m *Map) PositionCorrect(position Position) bool {
+	if m.Territory[position] == false {
+		return true
+	}
+	return false
+}
 func (mg *MapGen) GenerateMap() Map {
 
 	return Map{}
