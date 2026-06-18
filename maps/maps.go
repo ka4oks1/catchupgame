@@ -1,5 +1,7 @@
 package maps
 
+import "math/rand"
+
 const (
 	minSize = 3
 	maxSize = 7
@@ -22,12 +24,19 @@ type Map struct {
 
 // false here is good like 0 is empty place where character may stand and go to
 func (m *Map) PositionCorrect(position Position) bool {
-	if m.Territory[position] == false {
+
+	//for squares
+	if position.XCoord >= minSize && position.XCoord <= maxSize &&
+		!m.Territory[position] {
 		return true
+
 	}
+
 	return false
 }
 func (mg *MapGen) GenerateMap() Map {
 
-	return Map{}
+	mg.seed = rand.Int()
+
+	return Map{Size: mg.seed % 7}
 }

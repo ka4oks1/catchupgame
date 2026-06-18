@@ -8,11 +8,11 @@ import (
 	"testing"
 )
 
-type TestStruct struct {
-	pers Person
-	mapa maps.Map
-	way  string
-}
+//type TestStruct struct {
+//	pers Person
+//	mapa maps.Map
+//	way  string
+//}
 
 func TestPerson_Move(t *testing.T) { //write correct test
 
